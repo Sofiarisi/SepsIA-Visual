@@ -1,0 +1,9 @@
+fastapi
+pydantic
+numpy 
+uvicorn
+torch
+torchvision
+
+
+
