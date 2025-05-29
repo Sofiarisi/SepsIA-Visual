@@ -1,4 +1,4 @@
-import random 
+
 
 class model:
     def predict_probability(self,lista):
