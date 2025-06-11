@@ -23,4 +23,4 @@ def predict_probability(datos: SepsisInput):
     return {"mensaje": f"La probabilidad de sepsis es del {prob}%."}
 
 
-uvicorn.run(app)
+uvicorn.run(app, host="0.0.0.0")

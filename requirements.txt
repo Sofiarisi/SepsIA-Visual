@@ -2,8 +2,6 @@ fastapi
 pydantic
 numpy 
 uvicorn
-torch
-torchvision
 pandas
 scikit-learn
 matplotlib
