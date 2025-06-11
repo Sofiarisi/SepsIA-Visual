@@ -22,9 +22,5 @@ def predict_probability(datos: SepsisInput):
     prob = instancia.predict_probability(valores)
     return {"mensaje": f"La probabilidad de sepsis es del {prob}%."}
 
-@app.get("/")
-def a:
-    return 1
-
 
 uvicorn.run(app, host="0.0.0.0")
