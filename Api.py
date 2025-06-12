@@ -16,7 +16,7 @@ class SepsisInput(BaseModel):
 @app.post("/analizar")
 def predict_probability(datos: SepsisInput):
     instancia = model()
-    #pirulo es unna instancia de model que corre la funcion innit (no self) por qeu nose puede usar las funciones de unna clase sin intanciarla
+    #intancia es unna instancia de model que corre la funcion innit (no self) por qeu nose puede usar las funciones de unna clase sin intanciarla
    
     valores = [datos.HeartRate, datos.Temperature, datos.RespirationRate]
     prob = instancia.predict_probability(valores)
