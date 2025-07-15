@@ -8,6 +8,9 @@ class SepsisInput:
         self.HeartRate = HeartRate
         self.Temperature = Temperature
         self.RespirationRate = RespirationRate
+
+
+    
     
 datos = SepsisInput(1,2,3)
 
