@@ -2,16 +2,14 @@ from pydantic import BaseModel
 
 # Modelo de entrada de datos
 class SepsisInput(BaseModel):
-    edad: int
-    sexo: str
-    frecuenciacardiaca: float
-    presionarterial: float
-    frecuenciarespiratoria: float
-    temperatura: float
-    saturacion: float
+    frecuencia_cardiaca: float
+    presion_arterial: float
+    frecuencia_respiratoria: float
+    temperatura_corporal: float
+    saturacion_oxigeno: float
     procalcitonina: float
     lactato: float
-    proteinacreactiva: float
+    proteina_creactiva: float
     leucocitos: float
 
 class model:

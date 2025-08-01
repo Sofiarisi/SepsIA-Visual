@@ -11,12 +11,10 @@ app = FastAPI()
 
 @app.post("/analizar")
 def predict_probability(datos: SepsisInput):
+    print("Se corre en el modelo correcto")
     instancia = model()
     #intancia es unna instancia de model que corre la funcion innit (no self) por qeu nose puede usar las funciones de unna clase sin intanciarla
-    if datos.sexo == "femenino" :
-        datos.sexo= 1
-    else:
-        datos.sexo=0
+ 
 
     instancia.update(datos)
     prob = instancia.predict_probability()
