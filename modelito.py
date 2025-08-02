@@ -20,13 +20,11 @@ class model:
     def predict_probability(self):
         # Aquí va la lógica real cuando tengas el modelo entrenado
         # Por ahora simulamos con un porcentaje aleatorio
-        # porcentaje = 0
-        # for i in range(len(lista)):
-        #     porcentaje= porcentaje + lista[i]
-        #     porcentaje = porcentaje/ len(lista)
-        # return porcentaje
-        # # porcentaje = round(random.uniform(10, 90), 2)
-        return self.dt
+        # Convertimos el objeto a diccionario para acceder fácilmente a los valores
+        valores = self.dt.dict().values()
+        promedio = sum(valores) / len(valores)
+        return round(promedio, 2)  # Devolvemos el promedio redondeado
+        
     
 
 
