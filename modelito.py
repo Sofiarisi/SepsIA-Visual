@@ -23,6 +23,8 @@ class model:
         # Convertimos el objeto a diccionario para acceder fácilmente a los valores
         valores = self.dt.dict().values()
         promedio = sum(valores) / len(valores)
+
+        
         return round(promedio, 2)  # Devolvemos el promedio redondeado
         
     
