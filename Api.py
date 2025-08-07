@@ -37,6 +37,7 @@ app = FastAPI()
 
 # Cargar modelo entrenado
 modelo = joblib.load("modelo_xgboost.pkl")
+print("Modelo cargado correctamente")
 
 # Definir el esquema de datos que vas a recibir (ejemplo con 4 signos vitales)
 class DatosEntrada(BaseModel):
@@ -52,6 +53,7 @@ class DatosEntrada(BaseModel):
 
 # Endpoint de predicción
 @app.post("/analizar")
+
 def analizar(datos: DatosEntrada):
     entrada = np.array([[  # Convertimos a un array 2D para el modelo
     datos.frecuencia_cardiaca,
@@ -64,6 +66,8 @@ def analizar(datos: DatosEntrada):
     datos.proteina_creactiva,
     datos.leucocitos
     ]])
+    print("Los datos entraron")
     prediccion = modelo.predict(entrada)
+    print("el resultad es ", prediccion[0])
     return {"resultado": int(prediccion[0])}
 uvicorn.run(app, host="0.0.0.0")
