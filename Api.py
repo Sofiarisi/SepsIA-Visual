@@ -28,16 +28,18 @@
 
 from fastapi import FastAPI
 from pydantic import BaseModel
-import joblib
 import numpy as np
 import uvicorn
+import xgboost as xgb
 
+modelo = xgb.XGBRegressor()
+modelo.load_model("model_chico.json")  # or .bin, .txt, etc.
+print("Modelo cargado correctamente")
 # Crear app
 app = FastAPI()
 
 # Cargar modelo entrenado
-modelo = joblib.load("model_chico.json")
-print("Modelo cargado correctamente")
+
 
 # Definir el esquema de datos que vas a recibir (ejemplo con 4 signos vitales)
 class DatosEntrada(BaseModel):
@@ -70,7 +72,7 @@ def analizar(datos: DatosEntrada):
     try:
         prediccion = modelo.predict(entrada)
         print("el resultado es ", prediccion[0])
-        return {"resultado": prediccion[0]}
+        return {"resultado": float(prediccion[0])}
     except Exception as e:
         print("Error en la predicción:", e)
         return {"error": str(e)}
