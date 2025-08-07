@@ -46,9 +46,9 @@ class DatosEntrada(BaseModel):
     frecuencia_respiratoria: float
     temperatura_corporal: float
     saturacion_oxigeno: float
-    procalcitonina: float
+    #procalcitonina: float
     lactato: float
-    proteina_creactiva: float
+    #proteina_creactiva: float
     leucocitos: float
 
 # Endpoint de predicción
@@ -61,9 +61,9 @@ def analizar(datos: DatosEntrada):
     datos.frecuencia_respiratoria,
     datos.temperatura_corporal,
     datos.saturacion_oxigeno,
-    datos.procalcitonina,
+    #datos.procalcitonina,
     datos.lactato,
-    datos.proteina_creactiva,
+    #datos.proteina_creactiva,
     datos.leucocitos
     ]])
     print("Los datos entraron")
