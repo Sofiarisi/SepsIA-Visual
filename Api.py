@@ -36,7 +36,7 @@ import uvicorn
 app = FastAPI()
 
 # Cargar modelo entrenado
-modelo = joblib.load("model_chico.pkl")
+modelo = joblib.load("model_chico.json")
 print("Modelo cargado correctamente")
 
 # Definir el esquema de datos que vas a recibir (ejemplo con 4 signos vitales)
