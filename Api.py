@@ -67,7 +67,15 @@ def analizar(datos: DatosEntrada):
     datos.leucocitos
     ]])
     print("Los datos entraron")
-    prediccion = modelo.predict(entrada)
-    print("el resultad es ", prediccion[0])
-    return {"resultado": int(prediccion[0])}
+    try:
+        prediccion = modelo.predict(entrada)
+        print("el resultado es ", prediccion[0])
+        return {"resultado": prediccion[0]}
+    except Exception as e:
+        print("Error en la predicción:", e)
+        return {"error": str(e)}
+
+    # prediccion = modelo.predict(entrada)
+    # print("el resultad es ", prediccion[0])
+    # return {"resultado": prediccion[0]}
 uvicorn.run(app, host="0.0.0.0")
