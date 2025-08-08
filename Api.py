@@ -33,7 +33,7 @@ import uvicorn
 import xgboost as xgb
 
 modelo = xgb.XGBRegressor()
-modelo.load_model("model_chico.json")  # or .bin, .txt, etc.
+modelo.load_model("model_70.json")  # or .bin, .txt, etc.
 print("Modelo cargado correctamente")
 # Crear app
 app = FastAPI()
