@@ -32,7 +32,7 @@ import numpy as np
 import uvicorn
 import xgboost as xgb
 
-modelo = xgb.XGBRegressor()
+modelo = xgb.XGBClassifier()
 modelo.load_model("model_70.json")  # or .bin, .txt, etc.
 print("Modelo cargado correctamente")
 # Crear app
