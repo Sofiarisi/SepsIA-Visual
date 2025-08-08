@@ -70,9 +70,9 @@ def analizar(datos: DatosEntrada):
     ]])
     print("Los datos entraron")
     try:
-        prediccion = modelo.predict(entrada)
+        prediccion = modelo.predict_proba(entrada)
         print("el resultado es ", prediccion[0])
-        return {"resultado": float(prediccion[0])}
+        return {"resultado": float(prediccion[0][1])}
     except Exception as e:
         print("Error en la predicción:", e)
         return {"error": str(e)}
